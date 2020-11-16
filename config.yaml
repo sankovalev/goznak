@@ -1,0 +1,17 @@
+name: v1
+
+sources:
+  data_path: data
+  ckpt_path: checkpoints
+  train_meta: data/train.csv
+  val_meta: data/val.csv
+
+training:
+  model_encoder: resnet18
+  learning_rate: 0.0003
+  batch_size: 64
+  epochs: 40
+
+prediction:
+  threshold: 0.5
+  independent_heads: False # считать метрики отдельно по каждому выходу сетки; иначе - учитывать ответ классификатора
